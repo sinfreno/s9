@@ -1,11 +1,46 @@
 import './App.css';
+import SearchBar from './components/SearchBar';
+import VideoDetail from './components/VideoDetail';
+import VideoList from './components/VideoList';
+import {Container, SB, VL, VD} from './styles/style';
+import youtube from './apis/youtube';
+import React, {Component }from 'react';
 
-function App() {
+class App extends Component {
+  
+  state ={
+    videos: [],
+    selectedVideo: null
+  }
+
+
+  handleSubmit = async (termFromSearchBar) => {
+    const response = await youtube.get('/search', {
+      params: {
+        q: termFromSearchBar    
+      }   
+    })   
+  };
+
+
+
+render() {
   return (
     <div>
-      Hola mundo
+    <SB>
+        <SearchBar />
+    </SB>
+    <Container>
+      <VD>
+        <VideoDetail />
+      </VD>
+      <VL>
+        <VideoList />
+      </VL>
+    </Container>
     </div>
   );
+}
 }
 
 export default App;
