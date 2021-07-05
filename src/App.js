@@ -19,8 +19,11 @@ class App extends Component {
       params: {
         q: termFromSearchBar    
       }   
-    })   
+    })  
+
   };
+
+  
 
 
 
