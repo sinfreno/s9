@@ -2,7 +2,6 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import VideoDetail from './components/VideoDetail';
 import VideoList from './components/VideoList';
-import {Container, SB, VL, VD} from './styles/style';
 import youtube from './apis/youtube';
 import React, {Component }from 'react';
 
@@ -19,6 +18,9 @@ class App extends Component {
       params: {
         q: termFromSearchBar    
       }   
+    })
+    this.setState({
+      videos: response.data.items
     })  
 
   };
@@ -27,25 +29,20 @@ class App extends Component {
     this.setState({selectedVideo: video})
   }
 
-  
-
-
 
 render() {
   return (
-    <div>
-    <SB>
-        <SearchBar />
-    </SB>
-    <Container>
-      <VD>
-        <VideoDetail />
-      </VD>
-      <VL>
-        <VideoList />
-      </VL>
-    </Container>
-    </div>
+    <div >
+      <SearchBar handleFormSubmit={this.handleSubmit}/>
+        <div >
+          <div >
+            <VideoDetail video={this.state.selectedVideo}/>
+          </div>
+          <div >
+            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+          </div>
+        </div>
+     </div>
   );
 }
 }
