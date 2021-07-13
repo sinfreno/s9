@@ -9,7 +9,7 @@ const VideoList = ({videos , handleVideoSelect}) => {
 
     return (
 
-      <div>
+      <div style={{padding: "10px"}}>
         {renderedVideos}
       </div>
     ) 

@@ -11,9 +11,8 @@ export const Container = styled.div`
 export const SB = styled.div`
     width: 1200px;
     margin: auto;
-    height: 50px;
+    height: 70px;
     background-color: yellow;
-    text-align: center;
     margin-bottom: 20px;
     margin-top: 50px;
 `;
@@ -22,6 +21,14 @@ export const VD = styled.div`
     width: 64%;
     height: 100%;
     background-color: red;
+    display: flex;
+    
+`;
+
+export const Detalle = styled.div`
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     
 `;
 
@@ -30,6 +37,7 @@ export const VL = styled.div`
     height: 100%;
     background-color: green;
     display: flex;
+    overflow: scroll;
 
 
 

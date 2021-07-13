@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input type="text" value={this.state.term} onChange={this.handleChange} placeholder="Buscar"/>
+            <input style={{marginTop: "20px"}} type="text" value={this.state.term} onChange={this.handleChange} placeholder="Buscar"/>
           </label>
         </form>
       );
