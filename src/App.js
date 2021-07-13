@@ -4,6 +4,7 @@ import VideoDetail from './components/VideoDetail';
 import VideoList from './components/VideoList';
 import youtube from './apis/youtube';
 import React, {Component }from 'react';
+import {Container, SB, VL, VD} from './styles/style';
 
 class App extends Component {
   
@@ -33,15 +34,15 @@ class App extends Component {
 render() {
   return (
     <div >
-      <SearchBar handleFormSubmit={this.handleSubmit}/>
-        <div >
-          <div >
+      <SB ><SearchBar handleFormSubmit={this.handleSubmit}/> </SB>
+        <Container >
+          <VD >
             <VideoDetail video={this.state.selectedVideo}/>
-          </div>
-          <div >
+          </VD>
+          <VL >
             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-          </div>
-        </div>
+          </VL>
+        </Container>
      </div>
   );
 }

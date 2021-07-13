@@ -29,6 +29,7 @@ export const VL = styled.div`
     width: 33%;
     height: 100%;
     background-color: green;
+    display: flex;
 
 
 
